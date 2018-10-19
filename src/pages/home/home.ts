@@ -40,12 +40,17 @@ cadastro() {
   }
 
   entrarcomfb(){
-    this.afAuth.auth.signInWithRedirect (new firebase.auth.FacebookAuthProvider())
+    this.afAuth.auth.signInWithPopup (new firebase.auth.FacebookAuthProvider())
     .then(res =>{
       this.navCtrl.setRoot(InicialPage);
     })
 
 
+
+  }
+  sair(){
+    this.afAuth.auth.signOut();
+    this.navCtrl.setRoot(HomePage);
   }
 
   }
