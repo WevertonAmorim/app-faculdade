@@ -1,9 +1,11 @@
+import { User } from './../../model/user';
 import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { CadastroPage } from '../cadastro/cadastro';
 import { InicialPage } from '../inicial/inicial';
-import { User } from '../../model/user';
+
 import { AngularFireAuth } from 'angularfire2/auth';
+import firebase from 'firebase';
 
 @Component({
   selector: 'page-home',
@@ -35,6 +37,15 @@ export class HomePage {
 
 cadastro() {
     this.navCtrl.push('CadastroPage');
+  }
+
+  entrarcomfb(){
+    this.afAuth.auth.signInWithRedirect (new firebase.auth.FacebookAuthProvider())
+    .then(res =>{
+      this.navCtrl.setRoot(InicialPage);
+    })
+
+
   }
 
   }
