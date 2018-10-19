@@ -1,0 +1,20 @@
+<ion-content padding center text-center>
+  <ion-title></ion-title>
+  
+  <ion-list>
+    
+    <ion-item>
+        <ion-label floating>E-mail</ion-label>
+      <ion-input [(ngModel)]="user.email"></ion-input>
+   </ion-item>
+  
+    <ion-item>
+        <ion-label floating>Senha</ion-label>
+      <ion-input type="Password"[(ngModel)]="user.password"></ion-input>
+       </ion-item>
+  
+  </ion-list>
+  <p>{{ msgErro }}</p>
+  <button ion-button full (click)="entrar(user)">Entrar</button>
+  <button ion-button full color="light" (click)="cadastro()">Cadastro</button>
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-menu [content]="nav">
+       
+        <ion-content>
+            <ion-list>
+                    <ion-thumbnail item-start>
+                            <img src="../assets/imgs/avatar.jpg">
+                          </ion-thumbnail>
+                <button ion-item menuClose>
+                    Perfil
+                </button>
+                 <button (click)="sair()" ion-item menuClose>
+                    Sair
+                </button>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+<ion-nav #nav [root]="rootPage"></ion-nav>
